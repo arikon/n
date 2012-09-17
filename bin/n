@@ -141,9 +141,9 @@ install_node() {
     # TODO: refactor, this is lame
     cd $dir \
       && mkdir -p $N_PREFIX/lib/node \
-      && ln -sf $dir/include/node $N_PREFIX/include \
-      && ln -sf $dir/bin/* $N_PREFIX/bin \
-      && ln -sf $dir/lib/node/* $N_PREFIX/lib/node/ . \
+      && ln -sf $dir/include/node $N_PREFIX/include/ \
+      && ln -sf $dir/bin/* $N_PREFIX/bin/ \
+      && ln -sf $dir/lib/node/* $N_PREFIX/lib/node/ \
       && ln -sf $dir/wafadmin $N_PREFIX/lib/node/
   # install
   else
@@ -200,8 +200,7 @@ install_tarball() {
     && cleanup $version \
     && mkdir -p $dir \
     && echo $config > "$dir/.config" \
-    && n $version \
-    && ln -s "$N_PREFIX/n/versions/$version" "$N_PREFIX/n/current"
+    && n $version
 }
 
 #
