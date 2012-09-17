@@ -143,7 +143,8 @@ install_node() {
       && mkdir -p $N_PREFIX/lib/node \
       && ln -sf $dir/include/node $N_PREFIX/include \
       && ln -sf $dir/bin/* $N_PREFIX/bin \
-      && ln -sf $dir/lib/node/* $N_PREFIX/lib/node/ .
+      && ln -sf $dir/lib/node/* $N_PREFIX/lib/node/ . \
+      && ln -sf $dir/wafadmin $N_PREFIX/lib/node/
   # install
   else
     local tarball="node-v$version.tar.gz"
